@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>http测试</title>
+</head>
+<body>
+	<div id="result"></div>
+	<script src='httpTest.js'></script>
+	<script>
+		(function(){
+			$jsonp('http://api.douban.com/v2/movie/in_theaters',{
+				count:2,
+				start:2
+			},function(data){
+				document.getElementById('result').innerHTML = JSON.stringify(data);
+			})
+		})();
+		
+	</script>
+</body>
+</html>
